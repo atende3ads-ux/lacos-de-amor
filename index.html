@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coroas de Flores para Velório em Goiânia | Atendimento 24h | Laços de Amor</title>
 <meta name="description" content="Coroas de flores para velório com entrega em cemitérios e capelas de Goiânia e região metropolitana. Atendimento 24h pelo WhatsApp. Faixa com mensagem personalizada.">
+<meta name="theme-color" content="#7D3337">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Laços de Amor">
+<meta property="og:title" content="Laços de Amor | Coroas de flores para velório em Goiânia">
+<meta property="og:description" content="Homenagens florais a qualquer hora. Entrega em cemitérios e capelas de Goiânia e região, com atendimento 24h pelo WhatsApp.">
+<meta property="og:url" content="https://aprovacoes.3ads.com.br/lacos-de-amor/">
+<meta property="og:image" content="https://aprovacoes.3ads.com.br/lacos-de-amor/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Coroa de flores brancas e o logo da Laços de Amor">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aprovacoes.3ads.com.br/lacos-de-amor/assets/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Ms+Madi&display=swap" rel="stylesheet">
@@ -156,37 +169,35 @@ section{padding:96px 0}
 .previa .fita{position:absolute;left:-6%;right:-6%;top:50%;transform:translateY(-50%) rotate(-14deg);background:#fff;color:#1d1d1d;padding:18px 34px;text-align:center;font-weight:600;font-size:clamp(15px,1.8vw,19px);line-height:1.3;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);min-height:66px;display:flex;align-items:center;justify-content:center;word-break:break-word}
 
 /* Como pedir */
-.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:p}
-.passo{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:30px 28px;position:relative}
-.passo .n{font-family:'Ms Madi',cursive;font-size:64px;line-height:.8;color:var(--amarelo);display:block;margin-bottom:12px}
-.passo h3{font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
-.passo p{color:var(--texto-2);font-size:15.5px}
-.passo ul{margin-top:12px;padding-left:0;list-style:none;display:grid;gap:6px;font-size:15px;color:var(--texto)}
-.passo ul li{display:flex;gap:8px}
-.passo ul li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--vinho);margin-top:9px;flex:none}
-.prazo{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.prazo div{display:flex;gap:16px;align-items:center;border-radius:var(--raio);padding:22px 26px}
-.prazo .p1{background:var(--amarelo);color:var(--vinho-escuro)}
-.prazo .p2{background:var(--creme-2);color:var(--texto)}
-.prazo svg{width:34px;height:34px;flex:none}
-.prazo b{display:block;font-size:18px}
-.prazo span{font-size:15px;opacity:.85}
+.linha-tempo{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:12px}
+.linha-tempo li{position:relative;padding-right:8px}
+.linha-tempo li:not(:last-child)::after{content:"";position:absolute;top:36px;left:92px;right:-40px;border-top:2px dashed #D9C3B8}
+.linha-tempo .n{width:72px;height:72px;border-radius:50%;background:var(--vinho);color:var(--amarelo);display:grid;place-items:center;font-family:'Ms Madi',cursive;font-size:46px;line-height:1;padding-top:6px;margin-bottom:26px;box-shadow:0 0 0 8px var(--creme),0 0 0 9px #E8D3C8}
+.linha-tempo h3{font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.linha-tempo p{color:var(--texto-2);font-size:16px;max-width:32ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-size:13.5px;font-weight:500;color:var(--vinho);background:var(--creme-2);border-radius:999px;padding:6px 12px}
 
 /* Presentes */
-.presentes{background:#fff}
-.presentes .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
-.mosaico{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:200px 200px;gap:14px}
+.presentes{background:#fff;border-radius:56px 56px 0 0;position:relative;box-shadow:0 -24px 50px -40px rgba(90,34,38,.35)}
+.presentes .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.mosaico{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:14px}
 .mosaico figure{border-radius:16px;overflow:hidden;position:relative}
 .mosaico figure:first-child{grid-row:span 2}
 .mosaico img{width:100%;height:100%;object-fit:cover}
 .mosaico figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.94);color:var(--vinho);font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:999px}
-.lista-pres{list-style:none;margin-top:26px;display:grid;gap:14px}
-.lista-pres li{display:flex;gap:14px;align-items:center;font-size:16px}
-.lista-pres .ic{width:44px;height:44px;border-radius:12px;background:var(--creme-2);color:var(--vinho);display:grid;place-items:center;flex:none}
-.lista-pres .ic svg{width:22px;height:22px}
-.lista-pres b{display:block;font-weight:600}
-.lista-pres span{color:var(--texto-2);font-size:14.5px}
-.presentes .nota{margin-top:22px;display:inline-flex;gap:8px;align-items:center;background:#FFF4DD;color:#7A4F00;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:500}
+.lista-pres{list-style:none;margin-top:28px;display:grid;gap:12px}
+.lista-pres li{display:flex;gap:14px;align-items:center;font-size:16.5px}
+.lista-pres .ic{width:42px;height:42px;border-radius:50%;background:var(--creme-2);color:var(--vinho);display:grid;place-items:center;flex:none}
+.lista-pres .ic svg{width:20px;height:20px}
+.lista-pres b{font-weight:600}
+.acao-pres{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}
+.presentes .nota{display:inline-flex;gap:8px;align-items:center;color:var(--texto-2);font-size:14px}
+.presentes .nota svg{color:var(--vinho)}
+/* entrada das seções */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 
 /* Depoimento */
 .depo{text-align:center}
@@ -264,8 +275,11 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   .hero-foto .cartao{left:-8px}
   .hero-foto .laco{right:-8px;width:100px}
   .hero::before{left:40%;top:70%}
-  .passos{grid-template-columns:1fr}
-  .prazo{grid-template-columns:1fr}
+  .linha-tempo{grid-template-columns:1fr;gap:36px}
+  .linha-tempo li{padding-left:96px;min-height:72px}
+  .linha-tempo .n{position:absolute;left:0;top:0;margin:0}
+  .linha-tempo li:not(:last-child)::after{top:88px;left:35px;right:auto;bottom:-28px;border-top:0;border-left:2px dashed #D9C3B8}
+  .presentes{border-radius:36px 36px 0 0}
   footer .cols{grid-template-columns:1fr 1fr}
   footer .cols>div:first-child{grid-column:1/-1}
   section{padding:72px 0}
@@ -468,57 +482,50 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
       </div>
       <a class="btn btn-whats" data-wa="Olá! Gostaria de fazer um pedido de coroa de flores." href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Começar pedido</a>
     </div>
-    <div class="passos">
-      <div class="passo">
+    <ol class="linha-tempo">
+      <li class="rv">
         <span class="n">1</span>
         <h3>Escolha o modelo</h3>
-        <p>Veja o catálogo de coroas clássicas, de luxo e premium e toque na que preferir.</p>
-      </div>
-      <div class="passo">
+        <p>Veja as coroas clássicas, de luxo e premium e toque na que preferir.</p>
+      </li>
+      <li class="rv">
         <span class="n">2</span>
-        <h3>Fale com a gente no WhatsApp</h3>
+        <h3>Chame no WhatsApp</h3>
         <p>Para agilizar, envie:</p>
-        <ul>
-          <li>Local do velório (cemitério ou capela)</li>
-          <li>Nome de quem está sendo velado</li>
-          <li>Horário da cerimônia</li>
-          <li>Mensagem da faixa</li>
-        </ul>
-      </div>
-      <div class="passo">
+        <div class="tags"><span>Local do velório</span><span>Nome de quem está sendo velado</span><span>Horário</span><span>Mensagem da faixa</span></div>
+      </li>
+      <li class="rv">
         <span class="n">3</span>
         <h3>Entregamos no local</h3>
-        <p>Levamos a coroa diretamente ao local da despedida, com pontualidade e respeito ao momento da família.</p>
-      </div>
-    </div>
-    <div class="prazo">
-      <div class="p1"><svg><use href="#i-caminhao"/></svg><p><b>Coroas à pronta entrega</b><span>Atendimento 24h em Goiânia e região metropolitana.</span></p></div>
-      <div class="p2"><svg style="color:var(--vinho)"><use href="#i-calendario"/></svg><p><b>Buquês e presentes sob encomenda</b><span>Faça o pedido com 1 dia de antecedência.</span></p></div>
-    </div>
+        <p>Direto no cemitério ou capela, com pontualidade e respeito ao momento da família.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- PRESENTES -->
 <section class="presentes" id="presentes">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Sob encomenda</span>
-      <h2 class="titulo">Flores para momentos <span class="assin">marcantes</span></h2>
-      <p class="lead">Além das coroas, preparamos presentes especiais para aniversários, datas comemorativas e para dizer o que o coração sente.</p>
-      <ul class="lista-pres">
-        <li><span class="ic"><svg><use href="#i-flor"/></svg></span><p><b>Buquês premium</b><span>Montados com flores selecionadas</span></p></li>
-        <li><span class="ic"><svg><use href="#i-presente"/></svg></span><p><b>Caixas com chocolates premium</b><span>Para presentear com carinho</span></p></li>
-        <li><span class="ic"><svg><use href="#i-joia"/></svg></span><p><b>Joias</b><span>Um presente para guardar para sempre</span></p></li>
-      </ul>
-      <p class="nota"><svg width="18" height="18"><use href="#i-calendario"/></svg>Pedidos com 1 dia de antecedência</p>
-      <div style="margin-top:24px"><a class="btn btn-whats" data-wa="Olá! Gostaria de encomendar um buquê ou presente." href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Encomendar presente</a></div>
-    </div>
-    <div class="mosaico">
+    <div class="mosaico rv">
       <figure><img src="assets/img/buque-1.jpg" alt="Buquê premium de rosas" loading="lazy"><figcaption>Buquê premium</figcaption></figure>
       <figure><img src="assets/img/buque-2.jpg" alt="Buquê de flores" loading="lazy"></figure>
       <figure><img src="assets/img/cesta-2.jpg" alt="Caixa de presente com chocolates e joia" loading="lazy"><figcaption>Presentes</figcaption></figure>
       <figure><img src="assets/img/buque-4.jpg" alt="Buquê de flores" loading="lazy"></figure>
       <figure><img src="assets/img/cesta-3.jpg" alt="Cesta de presente" loading="lazy"></figure>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Sob encomenda</span>
+      <h2 class="titulo">Flores para momentos <span class="assin">marcantes</span></h2>
+      <p class="lead">Além das coroas, preparamos presentes para aniversários, datas comemorativas e para dizer o que o coração sente.</p>
+      <ul class="lista-pres">
+        <li><span class="ic"><svg><use href="#i-flor"/></svg></span><b>Buquês premium</b></li>
+        <li><span class="ic"><svg><use href="#i-presente"/></svg></span><b>Caixas com chocolates premium</b></li>
+        <li><span class="ic"><svg><use href="#i-joia"/></svg></span><b>Joias</b></li>
+      </ul>
+      <div class="acao-pres">
+        <a class="btn btn-whats" data-wa="Olá! Gostaria de encomendar um buquê ou presente." href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Encomendar presente</a>
+        <span class="nota"><svg width="18" height="18"><use href="#i-calendario"/></svg>Pedido com 1 dia de antecedência</span>
+      </div>
     </div>
   </div>
 </section>
@@ -671,6 +678,20 @@ gav.querySelectorAll('ul a').forEach(a => a.onclick = () => abre(false));
 
 // Balão do botão flutuante some depois de alguns segundos
 setTimeout(() => document.getElementById('balao').classList.add('some'), 6000);
+
+// Entrada suave das seções ao rolar
+(() => {
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  document.querySelectorAll('section:not(.hero) > .wrap > *, .difs .wrap > *').forEach(el => {
+    if (!el.classList.contains('linha-tempo') && !el.closest('.rv')) el.classList.add('rv');
+  });
+  document.querySelectorAll('.linha-tempo li').forEach((li, i) => li.style.transitionDelay = (i * 0.15) + 's');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+})();
 </script>
 </body>
 </html>
