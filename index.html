@@ -87,26 +87,29 @@ header .btn{height:46px;padding:0 20px;font-size:15px}
 .menu-btn svg{width:26px;height:26px}
 
 /* Hero */
-.hero{position:relative;background:var(--vinho);color:#fff;overflow:hidden;isolation:isolate}
-.hero::before{content:"Laços de amor";position:absolute;right:-4%;top:50%;transform:translateY(-50%) rotate(-90deg) translateX(0);transform-origin:center;font-family:'Ms Madi',cursive;font-size:clamp(140px,22vw,300px);color:var(--vinho-2);opacity:.55;white-space:nowrap;z-index:-1;pointer-events:none;right:auto;left:62%}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:56px;padding:72px 0 84px}
-.hero h1{font-weight:400;font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:-.045em}
-.hero h1 .assin{display:block;color:var(--amarelo);font-size:1.6em;margin-top:-.02em;margin-left:-.04em}
-.hero p.sub{font-size:clamp(17px,1.7vw,20px);color:#F1D9D3;max-width:46ch;margin-top:22px}
+.hero{position:relative;background:var(--vinho-escuro);color:#fff;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:-1;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(90,34,38,.55),transparent 45%),linear-gradient(to right,rgba(90,34,38,.35),transparent 60%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse 60% 80% at 15% 40%,#7D3337 0,#5A2226 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:48px;min-height:min(86vh,780px);padding:64px 0 120px}
+.hero-txt{align-self:center}
+.pilula{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.hero h1{font-weight:500;font-size:clamp(42px,6vw,80px);line-height:.98;letter-spacing:-.045em;margin-top:22px}
+.hero h1 .assin{display:block;color:var(--amarelo);font-weight:400;font-size:1.55em;margin-top:-.02em;margin-left:-.04em}
+.hero p.sub{font-size:clamp(17px,1.6vw,19px);color:#F1D9D3;max-width:46ch;margin-top:22px}
 .hero p.sub b{color:#fff;font-weight:600}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.selos{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
-.selos span{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:14px;font-weight:500}
-.selos svg{width:16px;height:16px;color:var(--amarelo)}
-.hero-foto{position:relative;justify-self:end;width:min(100%,480px)}
-.hero-foto .arco{border-radius:240px 240px 26px 26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:6px solid rgba(255,255,255,.1)}
-.hero-foto .arco img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-.hero-foto .cartao{position:absolute;left:-36px;bottom:42px;background:#fff;color:var(--texto);border-radius:16px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:var(--sombra);max-width:250px}
-.hero-foto .cartao .ic{width:42px;height:42px;border-radius:12px;background:var(--amarelo);display:grid;place-items:center;color:var(--vinho-escuro);flex:none}
-.hero-foto .cartao .ic svg{width:22px;height:22px}
-.hero-foto .cartao b{display:block;font-size:15px;line-height:1.2}
-.hero-foto .cartao small{color:var(--texto-2);font-size:13px}
-.hero-foto .laco{position:absolute;right:-28px;top:-18px;width:130px;opacity:.95}
+.selos{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px}
+.selos li{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#F1D9D3}
+.selos svg{width:17px;height:17px;color:var(--amarelo)}
+.hero-form{justify-self:end;width:min(100%,400px);background:rgba(46,18,20,.42);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.hero-form .t{font-weight:600;font-size:16px;margin-bottom:14px}
+.hero-form .campos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-form label{font-size:12.5px;color:#EED3CD;display:grid;gap:6px}
+.hero-form select{font:inherit;font-size:14px;color:var(--texto);background:#fff;border:0;border-radius:10px;height:42px;padding:0 10px;width:100%}
+.hero-form .btn{width:100%;justify-content:center;margin-top:14px}
+.onda{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;display:block}
 
 /* Diferenciais */
 .difs{background:#fff;border-bottom:1px solid var(--linha)}
@@ -284,10 +287,9 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   nav,header .btn-whats{display:none}
   .menu-btn{display:flex}
   .hero .wrap,.faixa-sec .wrap,.presentes .wrap,.faq .wrap{grid-template-columns:1fr;gap:44px}
-  .hero .wrap{padding:44px 0 60px}
-  .hero-foto{justify-self:center;width:min(100%,400px)}
-  .hero-foto .cartao{left:-8px}
-  .hero-foto .laco{right:-8px;width:100px}
+  .hero .wrap{padding:48px 0 96px;min-height:0;align-items:start}
+  .hero-bg{width:100%;-webkit-mask-image:none;mask-image:none;opacity:.35}
+  .hero-form{justify-self:stretch;width:100%}
   .hero::before{left:40%;top:70%}
   .linha-tempo{grid-template-columns:1fr;gap:36px}
   .revs{grid-template-columns:repeat(4,minmax(270px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:4px 16px 12px}
@@ -320,7 +322,9 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   .abas{width:100%}
   .abas button{flex:1;padding:0 8px;font-size:14px}
   .hero .ctas .btn{width:100%}
-  .selos span{font-size:13px;padding:8px 12px}
+  .selos{gap:10px 18px}
+  .hero-form .campos{grid-template-columns:1fr}
+  .pilula{font-size:10.5px;letter-spacing:.1em;padding:7px 12px}
   .mosaico{grid-template-rows:150px 150px;gap:10px}
   .flutua .bal{display:none}
   .flutua{right:16px;bottom:16px}
@@ -398,29 +402,42 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
 
 <!-- HERO -->
 <section class="hero" style="padding:0">
+  <div class="hero-bg" aria-hidden="true"><img src="assets/img/hero.jpg" alt=""></div>
   <div class="wrap">
-    <div>
+    <div class="hero-txt">
+      <span class="pilula">Coroas de flores 24h · Goiânia e região</span>
       <h1>Homenagens florais&nbsp;a <span class="assin">qualquer hora</span></h1>
       <p class="sub">Coroas de flores para velório com <b>entrega direta em cemitérios e capelas</b> de Goiânia e região. Escolha o modelo e fale com a gente pelo WhatsApp, a qualquer hora.</p>
       <div class="ctas">
         <a class="btn btn-whats" data-wa="Olá! Preciso de uma coroa de flores para velório com entrega imediata." href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Pedir pelo WhatsApp</a>
         <a class="btn btn-linha" href="#coroas">Ver modelos de coroas</a>
       </div>
-      <div class="selos">
-        <span><svg><use href="#i-relogio"/></svg>Atendimento 24h</span>
-        <span><svg><use href="#i-flor"/></svg>Amplo catálogo de coroas</span>
-        <span><svg><use href="#i-whats"/></svg>Pedidos pelo WhatsApp</span>
-      </div>
+      <ul class="selos">
+        <li><svg><use href="#i-relogio"/></svg>Atendimento 24h</li>
+        <li><svg><use href="#i-caminhao"/></svg>Entrega no local da despedida</li>
+        <li><svg><use href="#i-flor"/></svg>Faixa personalizada</li>
+      </ul>
     </div>
-    <div class="hero-foto">
-      <div class="arco"><img src="assets/img/hero.jpg" alt="Coroa de flores brancas com faixa de homenagem em tripé, na entrada de uma capela"></div>
-      <img class="laco" src="assets/logo-icone.png" alt="">
-      <div class="cartao">
-        <div class="ic"><svg><use href="#i-caminhao"/></svg></div>
-        <div><b>Entrega no local da despedida</b><small>Goiânia e região metropolitana</small></div>
+    <form class="hero-form" id="form-rapido">
+      <p class="t">Adiante seu atendimento em 2 perguntas</p>
+      <div class="campos">
+        <label>Qual linha de coroa?
+          <select name="linha">
+            <option value="">Selecione</option>
+            <option>Clássica</option><option>Luxo</option><option>Premium</option><option>Ainda não sei</option>
+          </select>
+        </label>
+        <label>Onde será a entrega?
+          <select name="local">
+            <option value="">Selecione</option>
+            <option>Cemitério</option><option>Capela ou velório</option><option>Outro local</option>
+          </select>
+        </label>
       </div>
-    </div>
+      <button class="btn btn-whats" type="submit"><svg><use href="#i-whats"/></svg>Falar no WhatsApp</button>
+    </form>
   </div>
+  <svg class="onda" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V30C240 0 480 0 720 22s480 38 720 8v30z" fill="#fff"/></svg>
 </section>
 
 <!-- DIFERENCIAIS -->
@@ -737,6 +754,18 @@ setTimeout(() => document.getElementById('balao').classList.add('some'), 6000);
   }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 })();
+
+// Formulário rápido da hero: monta a mensagem e abre o WhatsApp
+document.getElementById('form-rapido')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, linha = f.linha.value, local = f.local.value;
+  let msg = 'Olá! Preciso de uma coroa de flores';
+  if (linha && linha !== 'Ainda não sei') msg += ` da linha ${linha}`;
+  if (local) msg += `, com entrega em ${local.toLowerCase()}`;
+  msg += '.';
+  if (linha === 'Ainda não sei') msg += ' Ainda não escolhi o modelo, podem me ajudar?';
+  window.open(wa(msg), '_blank', 'noopener');
+});
 </script>
 </body>
 </html>
