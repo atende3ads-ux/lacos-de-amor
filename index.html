@@ -117,16 +117,39 @@ section{padding:96px 0}
 .cab{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
 
 /* Catálogo */
-.linhas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
-.linhas button{position:relative;text-align:left;background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:20px 22px 20px 54px;display:grid;gap:4px;transition:background .25s,border-color .25s,box-shadow .25s,transform .25s}
-.linhas button:hover{border-color:var(--vinho);transform:translateY(-2px)}
-.linhas i{position:absolute;left:22px;top:24px;width:18px;height:18px;border-radius:50%;border:2px solid #D9C3B8;transition:border-color .25s,background .25s}
-.linhas .nm{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--texto)}
-.linhas .ds{font-size:14.5px;color:var(--texto-2);line-height:1.45}
-.linhas button[aria-selected="true"]{background:var(--vinho);border-color:var(--vinho);box-shadow:var(--sombra)}
-.linhas button[aria-selected="true"] .nm{color:#fff}
-.linhas button[aria-selected="true"] .ds{color:#EED3CD}
-.linhas button[aria-selected="true"] i{border-color:var(--amarelo);background:radial-gradient(circle,var(--amarelo) 0 4px,transparent 5px)}
+.seletor{text-align:center;margin:4px 0 32px}
+.dica{display:flex;justify-content:center;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--texto-2)}
+.dica::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px)}
+.abas-linha{display:inline-flex;gap:6px;margin-top:14px;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:6px;box-shadow:0 10px 30px -18px rgba(90,34,38,.35)}
+.abas-linha button{height:46px;padding:0 22px;border-radius:999px;font-weight:600;font-size:15px;color:var(--texto-2);display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.abas-linha button:hover{color:var(--vinho);background:var(--creme)}
+.abas-linha .qt{font-size:12px;font-weight:700;min-width:22px;height:22px;border-radius:999px;display:grid;place-items:center;background:var(--creme-2);color:var(--vinho)}
+.abas-linha button[aria-selected="true"]{background:var(--vinho);color:#fff}
+.abas-linha button[aria-selected="true"] .qt{background:var(--amarelo);color:var(--vinho-escuro)}
+.desc-linha{margin-top:14px;font-size:15px;color:var(--texto-2);min-height:1.5em}
+.card .foto{display:block;width:100%;padding:0;cursor:zoom-in;position:relative}
+.card .foto .lupa{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--vinho);display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.35);transition:transform .2s}
+.card .foto .lupa svg{width:18px;height:18px}
+.card:hover .foto .lupa{transform:scale(1.08)}
+/* foto ampliada */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(30,12,14,.92);display:grid;grid-template-rows:auto 1fr auto;padding:18px;opacity:0;pointer-events:none;transition:opacity .25s}
+.lb.aberto{opacity:1;pointer-events:auto}
+.lb-topo{display:flex;justify-content:space-between;align-items:center;color:#fff;gap:16px;max-width:1100px;width:100%;margin:0 auto}
+.lb-topo b{font-size:18px;font-weight:600}
+.lb-topo small{display:block;color:#EED3CD;font-size:13.5px;font-weight:400}
+.lb-fechar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:26px;line-height:1;flex:none}
+.lb-palco{position:relative;display:grid;place-items:center;min-height:0;overflow:hidden;margin:14px 0}
+.lb-palco img{max-width:min(100%,900px);max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);object-fit:contain;border-radius:14px;box-shadow:0 30px 80px -30px #000}
+.lb-seta{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--vinho);font-size:28px;line-height:1;display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.lb-seta.ant{left:max(0px,calc(50% - 560px))}
+.lb-seta.prox{right:max(0px,calc(50% - 560px))}
+.lb-base{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+.lb-base .cont{color:#EED3CD;font-size:14px}
+.lb-angulos{display:flex;gap:8px}
+.lb-angulos button{width:56px;height:56px;border-radius:10px;overflow:hidden;opacity:.55;border:2px solid transparent}
+.lb-angulos button[aria-current="true"]{opacity:1;border-color:var(--amarelo)}
+.lb-angulos img{width:100%;height:100%;object-fit:cover}
+body.travado{overflow:hidden}
 .grade{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .card{position:relative;background:#fff;border-radius:var(--raio);overflow:hidden;border:1px solid var(--linha);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;animation:entra .45s both}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
@@ -140,7 +163,6 @@ section{padding:96px 0}
 .card h3{font-size:17px;font-weight:600;letter-spacing:-.01em}
 .card h3 small{display:block;font-size:13px;font-weight:500;color:var(--texto-2);margin-top:2px}
 .card .btn{height:44px;font-size:14.5px;margin-top:auto;width:100%;white-space:nowrap}
-.card::after{content:"";position:absolute;inset:0}
 .card .btn{position:relative;z-index:1}
 .mais{margin-top:40px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center;color:var(--texto-2)}
 .aviso-flores{margin-top:26px;font-size:14px;color:var(--texto-2);display:flex;gap:10px;align-items:flex-start;max-width:820px;margin-inline:auto;text-align:left}
@@ -299,10 +321,12 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   section{padding:72px 0}
 }
 @media (max-width:640px){
-  .linhas{grid-template-columns:1fr;gap:8px}
-  .linhas button{padding:14px 16px 14px 46px}
-  .linhas i{left:16px;top:17px}
-  .linhas button:not([aria-selected="true"]) .ds{display:none}
+  .dica{font-size:11px;letter-spacing:.08em}
+  .abas-linha{display:flex;width:100%}
+  .abas-linha button{flex:1;justify-content:center;padding:0 6px;font-size:14px;gap:6px}
+  .abas-linha .qt{display:none}
+  .lb{padding:12px}
+  .lb-seta{width:42px;height:42px;font-size:22px}
   .topo .wrap{gap:4px 14px;font-size:12px}
   .topo span:nth-child(3){display:none}
   header .wrap{height:66px}
@@ -438,13 +462,17 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
       <div>
         <span class="eyebrow">Catálogo de coroas</span>
         <h2 class="titulo">Escolha a homenagem <span class="assin">ideal</span></h2>
-        <p class="lead">Toque na coroa que mais combina com a sua homenagem. Você cai direto no nosso WhatsApp com o modelo já informado.</p>
+        <p class="lead">Escolha a linha, toque na foto para ver os detalhes e peça pelo WhatsApp com o modelo já informado.</p>
       </div>
     </div>
-    <div class="linhas" role="tablist" aria-label="Linhas de coroas">
-      <button role="tab" aria-selected="true" data-cat="classica"><i></i><span class="nm">Clássicas</span><span class="ds">Delicadas e tradicionais, com flores brancas e tons suaves.</span></button>
-      <button role="tab" aria-selected="false" data-cat="luxo"><i></i><span class="nm">Luxo</span><span class="ds">Mais volume, rosas e composições marcantes.</span></button>
-      <button role="tab" aria-selected="false" data-cat="premium"><i></i><span class="nm">Premium</span><span class="ds">Nossas composições mais imponentes, para homenagens especiais.</span></button>
+    <div class="seletor">
+      <p class="dica">Selecione a linha para ver os modelos</p>
+      <div class="abas-linha" role="tablist" aria-label="Linhas de coroas">
+        <button role="tab" aria-selected="true" data-cat="classica">Clássicas<span class="qt">8</span></button>
+        <button role="tab" aria-selected="false" data-cat="luxo">Luxo<span class="qt">8</span></button>
+        <button role="tab" aria-selected="false" data-cat="premium">Premium<span class="qt">8</span></button>
+      </div>
+      <p class="desc-linha" id="descLinha"></p>
     </div>
     <div class="grade" id="grade"></div>
     <div class="mais">
@@ -653,6 +681,21 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   </div>
 </footer>
 
+<!-- FOTO AMPLIADA -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada da coroa" aria-hidden="true">
+  <div class="lb-topo"><p><b id="lbNome"></b><small id="lbCod"></small></p><button class="lb-fechar" id="lbFechar" aria-label="Fechar">×</button></div>
+  <div class="lb-palco">
+    <img id="lbImg" alt="">
+    <button class="lb-seta ant" id="lbAnt" aria-label="Coroa anterior">‹</button>
+    <button class="lb-seta prox" id="lbProx" aria-label="Próxima coroa">›</button>
+  </div>
+  <div class="lb-base">
+    <div class="lb-angulos" id="lbAngulos"></div>
+    <span class="cont" id="lbCont"></span>
+    <a class="btn btn-whats" id="lbWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Quero esta coroa</a>
+  </div>
+</div>
+
 <div class="flutua">
   <span class="bal" id="balao">Precisa de uma coroa agora?</span>
   <a data-wa="Olá! Preciso de uma coroa de flores para velório." href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-whats"/></svg></a>
@@ -664,32 +707,70 @@ const wa = (txt) => `https://wa.me/${FONE}?text=${encodeURIComponent(txt)}`;
 document.querySelectorAll('[data-wa]').forEach(a => a.href = wa(a.dataset.wa));
 
 // Catálogo: as fotos estão distribuídas provisoriamente entre as linhas
+// Cada modelo pode ter mais de uma foto (ângulos). Basta acrescentar números à lista: [3, 31, 32]
 const CATS = {
-  classica:{nome:'Clássica', cod:'CL', fotos:[1,2,3,4,5,6,7,8]},
-  luxo:{nome:'Luxo', cod:'LX', fotos:[9,10,11,12,13,14,15,16]},
-  premium:{nome:'Premium', cod:'PR', fotos:[17,18,19,20,21,22,23,24]}
+  classica:{nome:'Clássica', cod:'CL', desc:'Delicadas e tradicionais, com flores brancas e tons suaves.', fotos:[[1],[2],[3],[4],[5],[6],[7],[8]]},
+  luxo:{nome:'Luxo', cod:'LX', desc:'Mais volume, rosas e composições marcantes.', fotos:[[9],[10],[11],[12],[13],[14],[15],[16]]},
+  premium:{nome:'Premium', cod:'PR', desc:'Nossas composições mais imponentes, para homenagens especiais.', fotos:[[17],[18],[19],[20],[21],[22],[23],[24]]}
 };
 const grade = document.getElementById('grade');
+const descLinha = document.getElementById('descLinha');
+let atual = 'classica';
+const codigo = (c, i) => `${c.cod}-${String(i+1).padStart(2,'0')}`;
+const pedido = (c, cod) => wa(`Olá! Tenho interesse na Coroa ${c.nome} modelo ${cod}. Está disponível?`);
 function mostra(cat){
+  atual = cat;
   const c = CATS[cat];
-  grade.innerHTML = c.fotos.map((n,i) => {
-    const cod = `${c.cod}-${String(i+1).padStart(2,'0')}`;
-    const link = wa(`Olá! Tenho interesse na Coroa ${c.nome} modelo ${cod}. Está disponível?`);
+  descLinha.textContent = c.desc;
+  grade.innerHTML = c.fotos.map((f,i) => {
+    const cod = codigo(c, i);
     return `<article class="card" style="animation-delay:${i*40}ms">
-      <a href="${link}" target="_blank" rel="noopener" class="foto" aria-label="Pedir Coroa ${c.nome} ${cod} pelo WhatsApp"><img src="assets/img/coroa-${n}.jpg" alt="Coroa de flores ${c.nome} modelo ${cod}" loading="lazy"></a>
+      <button type="button" class="foto" data-i="${i}" aria-label="Ampliar foto da Coroa ${c.nome} ${cod}"><img src="assets/img/coroa-${f[0]}.jpg" alt="Coroa de flores ${c.nome} modelo ${cod}" loading="lazy"><span class="lupa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
       <span class="selo"><i></i>Disponível hoje</span>
       <div class="info">
         <h3>Coroa ${c.nome}<small>Modelo ${cod}</small></h3>
-        <a class="btn btn-whats" href="${link}" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Quero esta coroa</a>
+        <a class="btn btn-whats" href="${pedido(c, cod)}" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Quero esta coroa</a>
       </div>
     </article>`;
   }).join('');
 }
-document.querySelectorAll('.linhas button').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.linhas button').forEach(x => x.setAttribute('aria-selected', x===b));
+document.querySelectorAll('.abas-linha button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.abas-linha button').forEach(x => x.setAttribute('aria-selected', x===b));
   mostra(b.dataset.cat);
 }));
 mostra('classica');
+
+// Foto ampliada
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+let lbI = 0, lbA = 0, lbVolta = null;
+function lbMostra(){
+  const c = CATS[atual], f = c.fotos[lbI], cod = codigo(c, lbI);
+  lbImg.src = `assets/img/coroa-${f[lbA]}.jpg`;
+  lbImg.alt = `Coroa de flores ${c.nome} modelo ${cod}`;
+  document.getElementById('lbNome').textContent = `Coroa ${c.nome}`;
+  document.getElementById('lbCod').textContent = `Modelo ${cod}`;
+  document.getElementById('lbCont').textContent = `${lbI+1} de ${c.fotos.length}`;
+  document.getElementById('lbWa').href = pedido(c, cod);
+  document.getElementById('lbAngulos').innerHTML = f.length > 1 ? f.map((n,j) => `<button type="button" data-a="${j}" aria-current="${j===lbA}" aria-label="Ângulo ${j+1}"><img src="assets/img/coroa-${n}.jpg" alt=""></button>`).join('') : '';
+}
+function lbAbre(i){ lbVolta = document.activeElement; lbI = i; lbA = 0; lbMostra(); lb.classList.add('aberto'); lb.setAttribute('aria-hidden','false'); document.body.classList.add('travado'); document.getElementById('lbFechar').focus(); }
+function lbFecha(){ lb.classList.remove('aberto'); lb.setAttribute('aria-hidden','true'); document.body.classList.remove('travado'); lbVolta?.focus(); }
+function lbPassa(d){ const n = CATS[atual].fotos.length; lbI = (lbI + d + n) % n; lbA = 0; lbMostra(); }
+grade.addEventListener('click', e => { const b = e.target.closest('.foto'); if (b) lbAbre(+b.dataset.i); });
+document.getElementById('lbFechar').onclick = lbFecha;
+document.getElementById('lbAnt').onclick = () => lbPassa(-1);
+document.getElementById('lbProx').onclick = () => lbPassa(1);
+document.getElementById('lbAngulos').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { lbA = +b.dataset.a; lbMostra(); } });
+lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-palco')) lbFecha(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('aberto')) return;
+  if (e.key === 'Escape') lbFecha();
+  if (e.key === 'ArrowLeft') lbPassa(-1);
+  if (e.key === 'ArrowRight') lbPassa(1);
+});
+let tx = null;
+lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+lb.addEventListener('touchend', e => { if (tx === null) return; const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) lbPassa(d < 0 ? 1 : -1); tx = null; });
 
 // Faixa personalizada
 const msg = document.getElementById('msg'), fita = document.getElementById('fita'), cont = document.getElementById('contador'), env = document.getElementById('enviarFaixa');
