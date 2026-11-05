@@ -94,6 +94,8 @@ header .btn{height:46px;padding:0 20px;font-size:15px}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse 60% 80% at 15% 40%,#7D3337 0,#5A2226 70%)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,640px);align-items:center;min-height:min(86vh,780px);padding:64px 0 120px}
 .hero-txt{align-self:center}
+.pilula.area{display:inline-flex;align-items:center;gap:8px;background:var(--amarelo);color:var(--vinho-escuro);border-color:var(--amarelo);letter-spacing:.08em}
+.pilula.area svg{width:15px;height:15px;flex:none}
 .pilula{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
 .hero h1{font-weight:500;font-size:clamp(42px,6vw,80px);line-height:.98;letter-spacing:-.045em;margin-top:22px}
 .hero h1 .assin{display:block;color:var(--amarelo);font-weight:400;font-size:1.55em;margin-top:-.02em;margin-left:-.04em}
@@ -379,7 +381,7 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
 <div class="topo">
   <div class="wrap">
     <span><i></i> Atendimento 24 horas</span>
-    <span>Entrega em Goiânia e região metropolitana</span>
+    <span>Atendemos somente Goiânia e região metropolitana</span>
     <span>0800 181 3000</span>
   </div>
 </div>
@@ -425,7 +427,7 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
   <div class="hero-bg" aria-hidden="true"><img src="assets/img/hero.jpg" alt=""></div>
   <div class="wrap">
     <div class="hero-txt">
-      <span class="pilula">Coroas de flores 24h · Goiânia e região</span>
+      <span class="pilula area"><svg><use href="#i-pin"/></svg>Atendemos somente Goiânia e região metropolitana</span>
       <h1>Homenagens florais&nbsp;a <span class="assin">qualquer hora</span></h1>
       <p class="sub">Coroas de flores para velório com <b>entrega direta em cemitérios e capelas</b> de Goiânia e região. Escolha o modelo e fale com a gente pelo WhatsApp, a qualquer hora.</p>
       <div class="ctas">
@@ -479,7 +481,7 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
       <span>Temos muitos outros modelos disponíveis para hoje.</span>
       <a class="btn btn-linha-vinho" data-wa="Olá! Gostaria de ver mais modelos de coroas de flores disponíveis." href="#" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Ver mais modelos no WhatsApp</a>
     </div>
-    <p class="aviso-flores"><svg><use href="#i-info"/></svg><span>As flores variam conforme a estação e a disponibilidade dos produtores. Se alguma flor não estiver disponível, usamos uma equivalente, sempre com o mesmo padrão de qualidade, frescor e beleza.</span></p>
+    <p class="aviso-flores"><svg><use href="#i-info"/></svg><span>As flores utilizadas estão sujeitas à disponibilidade e à sazonalidade da região. Caso alguma espécie não esteja disponível, será substituída por outra de qualidade e beleza equivalentes, mantendo o padrão do arranjo e a mesma qualidade.</span></p>
   </div>
 </section>
 
@@ -535,7 +537,7 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
       <li class="rv">
         <span class="n">3</span>
         <h3>Entregamos no local</h3>
-        <p>Direto no cemitério ou capela, com pontualidade e respeito ao momento da família.</p>
+        <p>Direto no cemitério ou capela, em Goiânia e região metropolitana, com pontualidade e respeito ao momento da família.</p>
       </li>
     </ol>
   </div>
@@ -618,11 +620,11 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-t
     </div>
     <div>
       <details open><summary>Vocês atendem a qualquer hora?</summary><p>Sim. O atendimento pelo WhatsApp funciona 24 horas, todos os dias, para que você consiga enviar sua homenagem a tempo.</p></details>
-      <details><summary>Onde vocês entregam?</summary><p>Entregamos coroas de flores em Goiânia e região metropolitana, diretamente no cemitério, capela ou local da despedida.</p></details>
-      <details><summary>Moro em outra cidade. Consigo enviar uma coroa?</summary><p>Sim. Muitos clientes de outros estados fazem o pedido pelo WhatsApp e nós cuidamos da entrega em Goiânia e região.</p></details>
+      <details><summary>Onde vocês entregam?</summary><p>Atendemos <b>somente Goiânia e região metropolitana</b>. Entregamos diretamente no cemitério, capela ou local da despedida dentro dessa área.</p></details>
+      <details><summary>Moro em outra cidade. Consigo enviar uma coroa?</summary><p>Sim, desde que a entrega seja em Goiânia ou na região metropolitana. Muitos clientes de outros estados fazem o pedido pelo WhatsApp e nós cuidamos da entrega aqui.</p></details>
       <details><summary>Posso escolher a mensagem da faixa?</summary><p>Pode. Toda coroa acompanha uma faixa com a mensagem que você escolher. É só nos enviar o texto junto com o pedido.</p></details>
       <details><summary>Qual o prazo para buquês e presentes?</summary><p>Buquês premium, caixas com chocolates e joias são preparados sob encomenda, com 1 dia de antecedência. Consulte os prazos e condições de entrega pelo WhatsApp.</p></details>
-      <details><summary>E se uma flor da foto não estiver disponível?</summary><p>As flores variam conforme a estação. Quando alguma não estiver disponível, usamos uma equivalente, mantendo o mesmo padrão de qualidade e beleza.</p></details>
+      <details><summary>E se uma flor da foto não estiver disponível?</summary><p>As flores utilizadas estão sujeitas à disponibilidade e à sazonalidade da região. Caso alguma espécie não esteja disponível, será substituída por outra de qualidade e beleza equivalentes, mantendo o padrão do arranjo e a mesma qualidade.</p></details>
     </div>
   </div>
 </section>
